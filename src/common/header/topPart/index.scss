@@ -1,0 +1,42 @@
+.topPart-wrapper {
+    height: 70px;
+    line-height: 70px;
+    & .topPart-logo {
+        background:url('../../../assets/images/topbar.png') no-repeat   ;
+        background-position: 0 0;
+        position: relative;
+    }
+    & .topPart-selectList a{
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+    }
+    & .topPart-selectList a:hover {
+        background-color: #000000;
+    }
+    & .topPart-selectList .active {
+        background-color: #000000;
+    }
+    & .creatorCenter {
+        border:1px solid #4F4F4F;
+        width: 90px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        margin: 19px 0 0 12px;
+        background-color: #242424;
+        color: #ccc;
+        font-size: 12px;
+        cursor: pointer;
+        border-radius: 20px    ;
+        -webkit-border-radius: 20px    ;
+        -moz-border-radius: 20px    ;
+        -ms-border-radius: 20px    ;
+        -o-border-radius: 20px    ;
+        }
+    & .creatorCenter:hover {
+        border-color: #fff;
+        columns: #fff;
+    }    
+}

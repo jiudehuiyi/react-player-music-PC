@@ -1,0 +1,30 @@
+.homeList-title-logo {
+    background: url('../../../assets/images/index.png') no-repeat;
+    background-position: -225px -156px;
+    height: 33px;
+    padding: 0 10px 0 34px;
+}
+.homeList-content {
+    border: 1px solid #D2D2D2;
+    background-color: #F4F4F4;
+}
+.player-logo,.player-restore{
+    background: url('../../../assets/images/index.png' ) no-repeat;
+    display:inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    background-position: -267px -205px;
+    cursor: pointer;
+}
+.player-restore {
+    background-position: -300px -205px;
+    cursor: pointer;
+}
+.clearfix:after {
+    content: '.';
+    height: 0;
+    display: block;
+    clear: both;
+}
+

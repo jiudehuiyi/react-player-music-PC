@@ -1,0 +1,47 @@
+.ownComment-header {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #C20C0C;
+
+
+
+}
+ .circle {
+    width: 0px;
+    height: 0px;
+    border:6px solid #e2e2e2;
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid transparent;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: -5px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+.circle-mask {
+    width: 0px;
+    height: 0px;
+    border:6px solid #fff;
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid transparent;
+    display: inline-block;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    position: absolute;
+    left: -3px;
+    top: 20px;
+}
+.aite{
+    background: url('../../../assets/images/icon.png') no-repeat;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    background-position: -60px -490px;
+    display: inline-block;
+}

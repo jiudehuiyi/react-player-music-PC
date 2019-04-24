@@ -1,0 +1,20 @@
+.hotcommend-wrapper {
+    .hotcommend-title{
+        padding-bottom: 20px;
+        border-bottom:2px solid #C10D0C;
+        .hotcommend-title-logo{
+            background: url('../../../assets/images/index.png') no-repeat;
+            background-position: -225px -156px;
+            height: 33px;
+            padding: 0 10px 0 34px;
+        }
+    }
+   
+}
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;  
+}

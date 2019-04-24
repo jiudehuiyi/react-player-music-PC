@@ -1,0 +1,54 @@
+.user-home-cvip{
+    background: url('../../assets/images/cvip.jpg') no-repeat;
+    width: 38px;
+    height: 36px;
+    line-height: 36px;
+    background-position: center ;
+    background-size: 100% 20px;
+}
+.user-home-level {
+    background: url('../../assets/images/icon2.png') no-repeat;
+    background-position: -134px -190px ;
+    padding-left: 29px;
+    padding-right: 29px;
+    line-height: 21px;
+    color: #e03a24;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 8px;
+}
+.user-home-man,.user-home-woman {
+    background: url('../../assets/images/icon.png') no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -41px -57px;
+    margin: 9px 0 0 8px;
+}
+.user-home-woman {
+    background-position: -41px -27px;
+}
+.clearfix:after{
+    content: "020"; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;  
+    }
+.user-home-authLogo {
+    background: url('../../assets/images/icon2.png') no-repeat;
+    width: 68px;
+    height: 20px;
+    background-position: 0 -480px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.ant-progress-bg {
+    height: 40px !important;
+    border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    -ms-border-radius: 0px !important;
+    -o-border-radius: 0px !important;
+}

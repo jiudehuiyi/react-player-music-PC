@@ -1,0 +1,23 @@
+.footer {
+    background-color: #F2F2F2;
+    border-top: 2px solid #C9C9C9;
+    padding-top: 35px;
+    padding-bottom: 100px;
+}
+.user-token,.dependentMusician,.appreciate,.videoReward {
+    background: url('../../assets/images/foot_enter_new.png') no-repeat;
+    background-size: 110px 450px;
+    width: 50px;
+    height: 45px;
+    margin: 0 auto;
+}
+.user-token {
+    background-position: -63px -101px;
+}
+
+.appreciate{
+    background-position: -60px  -50px;
+}
+.videoReward{
+    background-position: 0 -101px;
+}

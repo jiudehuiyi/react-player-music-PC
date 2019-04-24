@@ -1,0 +1,49 @@
+.songTime .ant-slider-track{
+    background-color: #C70C0C ;
+}
+.songTime .ant-slider-rail {
+    background-color: #181818;
+}
+.songTime.ant-slider-handle {
+    border:5px solid #ECECED;
+    background-color: #C70C0C;
+}
+.singer_loop,.songs_loop,.songs_random {
+    width: 25px;
+    height: 25px;
+    background: url('../../assets/images/playbar.png') no-repeat;
+    background-position: -66px -344px;
+    display: inline-block;
+}
+.songs_loop {
+    background-position: -3px -344px;
+}
+.songs_random{
+    background-position: -66px -248px;
+}
+.musicPlay-playlist {
+    background: url("../../assets/images/playbar.png") no-repeat;
+    width: 38px;
+    height: 25px;
+    display: inline-block;
+    background-position: -42px -98px;
+    vertical-align: middle;
+}
+.playlist-modal .ant-modal-content{
+    position: fixed;
+    bottom: 53px;
+    width: 530px;
+}
+.playlist-modal .ant-modal-header {
+    background-color: #1E1E1E;
+    font-size: 12px;
+}
+.playlist-modal .ant-modal-title {
+    color: #fff;
+}
+.playlist-modal .ant-modal-close {
+    color: #fff;
+}
+.playlist-modal-sub:hover {
+    background-color: #130E13;
+}

@@ -1,0 +1,142 @@
+.song{
+    background-color: #F5F5F5;
+}
+.song-logo{
+    width: 198px;
+    height: 198px;
+    position: relative;
+    margin-left:20px;
+    margin-top: 30px;
+}
+.song-logo-bg {
+    background: url('../../assets/images/coverall.png') no-repeat;
+    width: 206px;
+    height: 205px;
+    background-position: -140px -580px;
+}
+.song-logo-img {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+        left: 38px;
+        top: 38px;
+    & img {
+        width: 130px;
+        height: 130px;
+        
+        border-radius: 50%    ;
+        -webkit-border-radius: 50%    ;
+        -moz-border-radius: 50%    ;
+        -ms-border-radius: 50%    ;
+        -o-border-radius: 50%    ;
+    }
+}
+.exact-link {
+    width: 206px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+    & .exact-link-icon {
+        background: url('../../assets/images/icon.png') no-repeat;
+        width: 16px;
+        height: 16px;
+        background-position: -34px -863px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    & .exact-link-font {
+        font-size: 12px;
+        color: #0C73C2;
+        text-decoration: underline;
+    }
+}
+
+.song-content-rightHeader-logo {
+    background: url('../../assets/images/icon.png') no-repeat;
+    width: 54px;
+    height: 24px;
+    background-position: 0 -463px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+.song-content-rightHeader-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    vertical-align: middle;
+}
+.song-content-singer {
+    margin-top: 15px;
+}
+.song-content-belongAlbum {
+    margin-top: 15px;
+}
+.menu-player-bg {
+    // background: url('../../assets/images/button2.png') no-repeat;
+    // // background-position: right -428px;
+    // background-position: 0 -387px;
+    // display: inline-block;
+    // width: 60px;
+    // height: 30px;
+    // line-height: 30px;
+    & .menu-player-bgLeft {
+        background: url('../../assets/images/button2.png') no-repeat;
+        background-position: 0 -387px;
+        display: inline-block;
+        width: 60px;
+        height: 30px;
+        line-height: 25px;
+        vertical-align: middle;
+    }
+    & .menu-player-bgRight {
+        background: url('../../assets/images/button2.png') no-repeat;
+        background-position: right -428px;
+        padding: 0px 5px 0px 5px;
+        height: 30px;
+        line-height: 30px;
+        width: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: -5px;
+        }
+}
+.add {
+    background: url('../../assets/images/button2.png') no-repeat;
+    height: 30px;
+    line-height: 30px;
+    min-width: 23px;
+    width: 31px;
+    background-position: 0 -1588px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.menu-player-store{
+    
+    & .menu-player-storeLogo {
+        background: url('../../assets/images/button2.png') no-repeat;
+        background-position: 0 -977px;
+        min-width: 23px;
+        height: 30px;
+        line-height: 27px;
+        display: inline-block;
+        padding-right: 2px;
+        padding-left: 28px;
+        padding-top: 2px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+    & .menu-player-store-bgRight {
+        background: url('../../assets/images/button2.png') no-repeat;
+        background-position: right -1020px;
+        height: 30px;
+        width: 5px;
+        line-height: 30px;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}
+
+
