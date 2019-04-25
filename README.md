@@ -15,8 +15,7 @@
 
 ```
 运行的第一个命令行窗口:
-git clone git@github.com:jiudehuiyi/react-player-music-PC.git  //下载react-player-music-PC
-或者git clone https://github.com/jiudehuiyi/react-player-music-PC.git //下载react-player-music-PC
+git clone https://github.com/jiudehuiyi/react-player-music-PC.git //下载react-player-music-PC
 
 cd react-player-music-PC //进入react-music播放器目录
 
