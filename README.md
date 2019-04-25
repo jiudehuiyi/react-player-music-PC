@@ -14,9 +14,10 @@
 ## 如何安装与使用
 
 ```
-运行的第一个命令行窗口:
+(在git bash中运行一下命令,用以下载整个项目):
 git clone https://github.com/jiudehuiyi/react-player-music-PC.git //下载react-player-music-PC
 
+开启另外一个命令行(根据不同的系统,开启不一样,例:window系统:在当前项目文件夹打开cmd)
 cd react-player-music-PC //进入react-music播放器目录
 
 npm install //安装依赖
