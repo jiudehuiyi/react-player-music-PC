@@ -9,13 +9,13 @@
 ## 如何安装与使用
 
 ```
-git clone https://github.com/maomao1996/react-music.git  //下载react-music
+git clone git@github.com:jiudehuiyi/react-player-music-PC.git  //下载react-player-music-PC
 
-cd react-music //进入react-music播放器目录
+cd react-player-music-PC //进入react-music播放器目录
 
-yarn //安装依赖
+npm install //安装依赖
 
-yarn start //服务端运行
+npm run start //运行在浏览器上,这里采用4000端口
 
-yarn build  //项目打包
+npm run build  //项目打包
 ```
