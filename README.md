@@ -9,7 +9,15 @@
 该项目是PC端的,只适用于PC端，不适用于移动端，本项目适用于于刚将全家桶了解得差不多,想动手实战的react提高技术的人,因为本项目中采用很多不同的方法去编写不同的组件,
 采用不同的方法编写相类似的组件,同时能让你更快的上手react全家桶及其相关的技术
 ```
-
+##
+```
+特别提示:如果遇到报错：Error in Cannot find module node-sass错误,是node-sass没有安装成功
+要单独安装node-sass ： npm install node-sass@latest
+如果上述命令还安装失败,那么就只能切换淘宝镜像:
+如果还没安装淘宝镜像可以参考以下命令:npm install -g cnpm --registry=https://registry.npm.taobao.org(安装就可以跳过)
+执行 cnpm install node-sass@latest 就能安装node-sass成功,项目就能正常跑起来
+如还有什么问题,请联系我
+```
 
 ## 如何安装与使用
 
