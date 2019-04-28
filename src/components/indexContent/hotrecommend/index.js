@@ -24,7 +24,7 @@ import './index.scss';
                         <div>
                             <img width='100%' height='140px' src={item.picUrl} alt="" />
                         </div>
-                        <div style={{ color:"#000",fontSize:"14px"}}>
+                        <div style={{ color:"#000",fontSize:"14px",width:"100%",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>
                             {item.name}
                         </div>
                         <div className='clearfix' style={{
