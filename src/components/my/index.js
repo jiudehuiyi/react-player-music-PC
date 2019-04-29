@@ -70,6 +70,7 @@ class My extends Component {
         }
 
     changePane=(index)=>{
+        //"http://localhost:3000/login/status"这个在地址在上线的时候换成上线的地址,例如:"http://localhost:3000/login/status"换成http:域名/login/status,或者直接的common/Api目录中写,下面的也一样
         axios.get("http://localhost:3000/login/status").then( (res)=>{
             // console.log(res.data)
             this.props.getLoginStatusFunc(res.data);
