@@ -232,7 +232,7 @@ import docCookies from '../../api/docCookies';
                 ,this.props.songUrlData(res.data)注释回来就可以了,上就使用reducer进行持久化(没在container,action，reducer)注释掉 */}
                 {/* 不加就直接使用storage进行持久化 */}
             {/* songUrlData={  this.props.songUrlData } songSingerInfo={this.props.songSingerInfo} */}
-                    {/* <MusicPlay   /> */}
+                    <MusicPlay   />
             </div>
             <div className='song-content' style={ { marginTop:"30px",minWidth:"1430px" } }>
                 <Row>
