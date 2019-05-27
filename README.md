@@ -83,7 +83,7 @@ node app.js //服务端运行,访问http://localhost:3000/
 ```
 在npm install or yarn install 的时候，请确保网络良好，如个别依赖安装不了，请设置淘宝镜像为安装源；
 如果有什么问题可以提issue,也可以加qq或者微信
-qq:136859304,wx:18302090015
+qq:136859304
 ```
 
 ## License
