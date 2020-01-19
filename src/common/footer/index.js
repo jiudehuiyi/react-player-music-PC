@@ -2,11 +2,12 @@
 import {Col,Row} from 'antd';
 import 'antd/dist/antd.css';
 
- import './index.scss';
+import './index.scss';
  class Footer extends Component {
   render() {
     return (
       <div className='footer' style={{ minWidth:"1050px" }}>
+        
           <Row gutter={10}>
             <Col span={4}></Col>
             <Col span={16}>

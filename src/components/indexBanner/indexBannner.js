@@ -11,7 +11,8 @@ import './indexBannner.scss'
   constructor(props){
     super(props);
     this.state={
-      indexBannners:0
+      indexBannners:0,//当前显示轮播图的引索,默认为第一张
+      bannerBgArr:[]//轮播图图片,由于没有背景图的接口数据,这里用图片加上模糊度去模拟
     }
   }
 
@@ -22,9 +23,12 @@ import './indexBannner.scss'
             if(res.data.code === 200) {
               //formatHomeBanner(res.data.banners) 格式化数据
                 this.props.getBannnerFunc(formatHomeBanner(res.data.banners));
+                this.state.bannerBgArr = [...res.data.banners];
             }else {
                 console.log("你的请求有错误.")
             }
+        } ).catch( (error)=>{
+          console.log( "错位为:",error )
         } )
     }
 
@@ -38,6 +42,7 @@ import './indexBannner.scss'
       if(url) {
         window.location = url
       }else {
+        //根据targetType得数字类型跳转到相应的模块类别
         if( targetType === 1 ) {
           this.props.history.push(`/song?id=${targetId}`)
         }else if(targetType === 10 ){
@@ -76,45 +81,53 @@ import './indexBannner.scss'
     }
 
   render() {
-      // console.log( this.props )
-      //判断获取到的数据是否为空,不为空则渲染内容,为空则渲染null
+      
+      //判断获取到的数据是否为空,不为空则渲染内容,也就是渲染轮播图,为空则渲染null
     const banners = this.props.homeBannerData.length>0?
     this.props.homeBannerData.map( (item,index)=>{
+     
       return (
         // indexBannner${index}
-        <div className={`indexBannner `} key={item.imageUrl} style={{ 
-          width:"100%",height:"336px",
-          backgroundSize:"100% 100%"
-        }}
-          
-          >    
+
+        <div className={`indexBannner`} key={item.imageUrl} style={{ 
+          height:"336px",
+        }}>  
+          <div>
           {
-            item.imageUrl.length>0?<img src={ item.imageUrl } onClick={ ()=>this.handleClick(item.url,item.targetId,item.targetType) } style={{ width:"730px",height:"336px",margin:'0 auto',cursor:"pointer" }} />:<Spin />
+            item.imageUrl.length>0?<img src={ item.imageUrl } title={item.typeTitle} alt={item.typeTitle} onClick={ ()=>this.handleClick(item.url,item.targetId,item.targetType) } style={{ width:"730px",height:"336px",margin:'0 auto',cursor:"pointer" }} />:<Spin />
           }
-       </div>
+          </div>
+
+         </div>
       )
       
     } )
     :<Spin />;
+    let bgContent = this.state.bannerBgArr[this.state.indexBannners]&&this.state.bannerBgArr[this.state.indexBannners].imageUrl;
+    bgContent = bgContent || "http://p1.music.126.net/El56giZfsh9EmFFD_hVPnA==/109951164617485189.jpg?imageView&blur=40x20";
+    
     return (
-      <div style={{ position:"relative",marginTop:"30px",minWidth:"990px",marginTop:"30px",paddingTop:"30px" }} className={`indexBannner${this.state.indexBannners}`}>
+      <div style={{ position:"relative",marginTop:"30px",minWidth:"990px",marginTop:"30px" }} className={`indexBannner${this.state.indexBannners}`}>
       <Row>
       <Col span={4}></Col>
       <Col span={16}>
-        <div style={{ position:"relative" }}>
+        <div style={{ height:"336px" }}>
         <div className='leftArrow' onClick={ ()=>this.prevImg() }>
             <Icon type="left" style={{ fontSize:"40px",color:"#fff",width:"40px",height:"70px" }} />
          </div>
-         
+         {/* 由于没有背景图的接口数据,这里用图片加上模糊度去模拟 */}
+         <div style={{ position:"absolute",left:"-100%",top:"0px",width:"600%",height:"336px",backgroundImage:`url(${bgContent})`,backgroundRepeat:"no-repeat",backgroundSize:"600% 336px",filter:"blur(10px)"  }}></div>
          <Carousel
             afterChange={ (current)=>this.afterChange(current) }
             autoplay={true}
             effect="fade"
             ref={ (middle)=>this.banners=middle }
          >
-          {
-            banners
-          }
+          
+              {
+                banners
+              }
+         
          </Carousel>
          <div className='rightArrow' onClick={ ()=>this.nextImg() }>
             <Icon type="right" style={{ fontSize:"40px",color:"#fff",width:"40px",height:"70px" }}   />

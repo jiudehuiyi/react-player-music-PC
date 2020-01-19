@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
 import { homeBanner } from './home'
 import { albumData,albumCommentData,singerOtherAlbum } from './album'
-import { hotCommend } from './indexContent'
+import { hotCommend,recommendPlaylistReducer,recommendSongsReducer } from './indexContent'
 import { newAlbumReducer,topListReducer,newListReducer,originalListReducer,enteringSingerReducer,hotCommendTagsReducer } from '../reducers/indexContent'
 import { songDataReducer,songCommentDataReducer,songLyricDataReducer,similarSongData, songUrlDataReducer,songSingerInfoReducer } from './song';
 import { commendTagsContentReducer, selectTagsDataReducer } from './discoverPlaylist';
@@ -16,7 +16,9 @@ import { getUserDetailDataReducerUserFollows,userFollowsDataReducerUserFollows }
 import { searchDataReducer } from './search'
 import { singerSongsDataReducer,singerAlbumsDataReducer,singerMvsDataReducer,singerDesDataReducer } from './artists';
 import { getLoginStatusReducer,getLoginPlaylistInfoReducer,getLoginPlaylistContentReducer } from './my';
-
+import {djCateListReducer,djCateListTypeReducer,radioLeaderBorderReducer} from "./discoverDjRadio"
+import { djDetailReducer,djDetailListReducer } from "./djDetail"
+import { friendsDataReducer } from "./friends"
 const reducer = combineReducers({
   homeBanner,
   albumData,
@@ -65,6 +67,14 @@ const reducer = combineReducers({
   getLoginStatusReducer,
   getLoginPlaylistInfoReducer,
   getLoginPlaylistContentReducer,
+  djCateListReducer,
+  djCateListTypeReducer,
+  radioLeaderBorderReducer,
+  djDetailReducer,
+  djDetailListReducer,
+  recommendPlaylistReducer,
+  recommendSongsReducer,
+  friendsDataReducer,
   });
   
   export default reducer

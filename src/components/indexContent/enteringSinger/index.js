@@ -48,7 +48,7 @@ checkAll=()=>{
                 }
             </div>
             <div style={{ width:"100%",textAlign:"center" }} >
-                <Button type="primary" onClick={ ()=>this.handleDump() } >申请成为音乐人</Button>
+                <Button  onClick={ ()=>this.handleDump() } >申请成为音乐人</Button>
             </div>
       </div>
     )

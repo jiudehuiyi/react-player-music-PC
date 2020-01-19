@@ -24,6 +24,9 @@ import docCookies from '../../api/docCookies';
 
     componentDidMount(){
           this.search = this.props.location.search;
+          if(!this.search) {
+              this.props.history.push("/discover/toplist?id=19723756");
+          }
         //获取所有榜单(列表)数据
         allPlaylistData().then( (res)=>{
             try {
@@ -33,6 +36,8 @@ import docCookies from '../../api/docCookies';
             }catch(err){
                 console.log("错误为:"+err)
             }
+        } ).catch( (error)=>{
+            console.log("错误为:",error);
         } )
         //开始播放歌曲
         //获取所有榜单(内容)数据
@@ -44,6 +49,8 @@ import docCookies from '../../api/docCookies';
             }catch(err){
                 console.log("错误为："+err)
             }
+        } ).catch( (error)=>{
+            console.log("错误为:",error);
         } )
 
         toplistCommentData(this.search,20,1).then( (res)=>{
@@ -54,7 +61,10 @@ import docCookies from '../../api/docCookies';
             }catch(err){
                 console.log("错误为："+err)
             }
+        } ).catch( (error)=>{
+            console.log("错误为:",error);
         } )
+        
     }
     startPlaySong=(searchStr)=>{
         // console.log(searchStr);

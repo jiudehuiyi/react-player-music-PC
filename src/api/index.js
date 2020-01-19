@@ -2,7 +2,8 @@
 
 import axios from 'axios';
 //这是本地开发的基本URL
-const baseURL = "http://localhost:3000";
+export const baseURL = "http://localhost:3000";
+
 //这是线上开发的URL
 // const baseURL = "http://xxx.xx.xx.xx:3000"
 //获取轮播图API
@@ -329,4 +330,70 @@ export const getSingerMvs = (id)=>{
 export const getSingerDesc = (id)=>{
     const url = `${baseURL}/artist/desc?id=${id}`;
     return axios.get(url,{ withCredentials: true });
+}
+//获取短信验证码
+export const getMessageCode=(phoneNumber)=>{
+    const url=`${baseURL}/captcha/sent?phone=${phoneNumber}`;
+    return axios.get(url,{withCredentials:true});
+}
+
+//验证验证码
+export const checkMessageCode=(phoneNumber,messageCode)=>{
+    const url = `${baseURL}/captcha/verify?phone=${phoneNumber}&captcha=${messageCode}`;
+    return axios.get(url,{withCredentials:true});
+}
+//注册
+export const registerApi = (nickname,password,phoneNumber,messageCode)=>{
+    const url = `${baseURL}/register/cellphone?phone=${phoneNumber}&password=${password}&captcha=${messageCode}&nickname=${nickname}`;
+    return axios.get(url,{withCredentials:true});
+}
+//电台分类
+export const djCateList = ()=>{
+    const url = `${baseURL}/dj/catelist`;
+    return axios.get(url,{withCredentials:true});
+}
+//电台分类推荐(优秀新电台)
+export const djCateListType = (id)=>{
+    const url = `${baseURL}/dj/recommend/type?type=${id}`;
+    return axios.get(url,{withCredentials:true});
+}
+//最热电台排行榜:http://localhost:3000/dj/radio/hot?cateId=2001
+export const radioLeaderboard = (id,offset)=>{
+    offset = (offset-1)*30;
+    let url ;
+    if( offset ) {
+        url = `${baseURL}/dj/radio/hot?cateId=${id}&offset=${offset}`;
+    }
+     url = `${baseURL}/dj/radio/hot?cateId=${id}`;
+    return axios.get(url,{withCredentials:true});
+}
+// 获取电台详情
+export const djDetail = (id)=>{
+    const url = `${baseURL}/dj/detail?rid=${id}`;
+    return axios.get(url,{withCredentials:true})
+}
+//电台节目表,这里为了简便省略limit，offset，只取30条数据
+export const deDetailList = (rid,asc)=>{
+    const url = `${baseURL}/dj/program?rid=${rid}&asc=${asc||false}`;//asc默认为false，当不存的时候
+    return axios.get(url,{withCredentials:true});
+}
+//每日推荐歌曲
+export const recommendPlaylist = ()=>{
+    const url = `${baseURL}/recommend/resource`;
+    return axios.get(url,{withCredentials:true});
+} 
+//获取每日推荐歌曲
+export const recommendSongs = ()=>{
+    const url = `${baseURL}/recommend/songs`;
+    return axios.get(url,{withCredentials:true});
+}
+//私人fm
+export const personFM = ()=>{
+    const url = `${baseURL}/personal_fm`;
+    return axios.get(url,{withCredentials:true})
+}
+//获取动态消息
+export const getDyncMessage = ()=>{
+    const url = `${baseURL}/event`;
+    return axios.get(url,{withCredentials:true})
 }

@@ -116,12 +116,25 @@ const dynamicMy = Loadable({
         return <Spin />
     } 
 })
-const dynamicFriends = Loadable({
-    loader:()=>import('../components/friends'),
+const dynamicDjRadio = Loadable({
+    loader:()=>import('../containers/djRadio'),
     loading(){
         return <Spin />
     }
 })
+const dynamicFriends = Loadable({
+    loader:()=>import('../containers/friends'),
+    loading(){
+        return <Spin />
+    }
+})
+const dynamicDjRadioDetail = Loadable({
+    loader:()=>import("../containers/djradioDetail"),
+    loading(){
+        return <Spin />
+    }
+})
+
 
 const dynamic404=Loadable({
    loader:()=>import('../components/404'),
@@ -147,6 +160,8 @@ class App extends Component {
                     <Route  path='/discover/playlist' component={ dynamicDiscoverPlaylist }/>
                     <Route  path='/playlist' component={ dynamicPlaylist } />
                     <Route  path='/discover/album' component={dynamicDiscoverAlbum} />
+                    <Route path="/discover/djradio" component={dynamicDjRadio} />
+                    <Route path="/djradio" component={dynamicDjRadioDetail}/>
                     <Route  path='/discover/toplist' component={ dynamicDicoverToplist } />
                     <Route path='/discover/artist/signed/' component={dynamicDiscoverArtists} />
                     <Route path='/discover/artist/' component={dynamicDiscoverArtists} />
@@ -158,6 +173,8 @@ class App extends Component {
                     <Route path='/artist' component={dynamicArtist} />
                     <Route path='/my' component={dynamicMy} />
                     <Route path='/friend' component={dynamicFriends} />
+                    
+
                     <Route path="/empty" component={null}  />
                     {/* <Route  path='/' exact component={dynamicMusicPlay} /> */}
 

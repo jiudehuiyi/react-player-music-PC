@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import IndexContent from '../../components/indexContent'
-import {hotCommend, newAlbumAction,topListAction,newListAction,originalListAction,enteringSingerAction,hotCommendTagsAction} from '../../actions/indexContent'
+import {hotCommend, newAlbumAction,topListAction,newListAction,originalListAction,enteringSingerAction,hotCommendTagsAction,recommendPlaylistAction,recommendSongsAction} from '../../actions/indexContent'
 const mapStateToProps = (state,ownProps) =>{
     return {
         hotCommend:state.hotCommend.data,
@@ -10,6 +10,8 @@ const mapStateToProps = (state,ownProps) =>{
         originalList:state.originalListReducer.data||{},
         enteringSinger:state.enteringSingerReducer.data||{},
         hotCommendTags:state.hotCommendTagsReducer.data||{},
+        recommendPlaylistData:state.recommendPlaylistReducer || {},
+        recommendSongsData:state.recommendSongsReducer ||{},
     }
 }
 const mapDispatchToProps = (dispatch,ownProps)=>{
@@ -41,6 +43,14 @@ const mapDispatchToProps = (dispatch,ownProps)=>{
         //获取热门推荐的标签
         hotCommendTagsFunc:(data)=>{
             dispatch(hotCommendTagsAction(data))
+        },
+        //获取每日推荐歌单
+        recommendPlaylistFunc:(data)=>{
+            dispatch( recommendPlaylistAction(data) )
+        },
+        //获取每日推荐歌曲
+        recommendSongsFunc:(data)=>{
+            dispatch( recommendSongsAction(data) )
         }      
     };
 }

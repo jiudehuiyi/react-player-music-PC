@@ -1,5 +1,5 @@
 import  React, { Component, Fragment } from 'react';
-import { Row,Col,Carousel,Icon } from 'antd';
+import { Row,Col,Carousel,Icon, } from 'antd';
 import { Link,withRouter } from 'react-router-dom'
 import 'antd/dist/antd.css';
 import './index.scss'

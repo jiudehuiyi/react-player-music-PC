@@ -62,6 +62,9 @@ class TopPart extends Component {
       
     }
     
+    dumpStore=()=>{
+        this.props.history.push("https://music.163.com/store/product")
+    }
    
 
     render(){
@@ -91,13 +94,19 @@ class TopPart extends Component {
                                   <NavLink activeClassName='active' to='/friend'>朋友</NavLink>
                             </Col>
                             <Col span={4}>
-                                  <NavLink activeClassName='active' to='/store/product'>商城</NavLink>
+                                 {/* 暂时没时间写这个,所以直接跳转到网易商城 */}
+                                  {/* <NavLink activeClassName='active' to='/store/product' >商城</NavLink> */}
+                                  <a href="https://music.163.com/store/product" target="_blank">商城</a>
                             </Col>
                             <Col span={4}>
-                                  <NavLink activeClassName='active' to='/store/product'>音乐人</NavLink>
+                                {/* 暂时没时间写这个,所以直接跳转到网易音乐人 */}
+                                  {/* <NavLink activeClassName='active' to='/store/product'>音乐人</NavLink> */}
+                                  <a href="https://music.163.com/nmusician/web/index#/" target="_blank">音乐人</a>
                             </Col>
                             <Col span={4} style={{ position:"relative" }}>
-                                  <NavLink activeClassName='active' to='/download'>下载客户端</NavLink>
+                                {/* 暂时没时间写这个,所以直接跳转到下载端 */}
+                                  {/* <NavLink activeClassName='active' to='/download'>下载客户端</NavLink> */}
+                                  <a href="https://music.163.com/#/download" target="_blank" >下载客户端</a>
                                   <Tag style={{ position:"absolute",top:"15px" }} color="#DD0D0D">Hot</Tag>
                             </Col>
                         </Row>

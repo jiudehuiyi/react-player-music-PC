@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row,Col } from 'antd';
 import 'antd/dist/antd.css';
 
-import { getHotCommend,getNewAlbum,getIncreate,getNewList,getOriginalList,getEnteringSinger,getHotCommendTags,getLoginStatus } from '../../api';
+import { getHotCommend,getNewAlbum,getIncreate,getNewList,getOriginalList,getEnteringSinger,getHotCommendTags,getLoginStatus,recommendPlaylist,recommendSongs,personFM } from '../../api';
 import HotRecommend from './hotrecommend';
 import NewdishShelf from './newdishshelf';
 import HomeList from './homeList'
@@ -12,13 +12,20 @@ import { formatHotCommend,formatHotCommendTags } from '../../api/formatIndexCont
 import EnteringSinger from './enteringSinger';
 import PersonalRecommend from './personalRecommend'
 import MusicPlay from '../../common/MusicPlay';
-
+import docCookies from "../../api/docCookies"
  class IndexContent extends Component {
+
+  constructor(props){
+    super(props);
+  
+  }
 
   componentDidMount(){
     //请求热门推荐中的歌单
     getHotCommend().then( (res)=>{
+   
       this.props.hotCommendFunc(res.data);
+      
     } )
     //请求新碟上架数据
     getNewAlbum().then( (res)=>{
@@ -46,6 +53,29 @@ import MusicPlay from '../../common/MusicPlay';
         this.props.hotCommendTagsFunc(res.data)
     } )
 
+    let loginCertificate = docCookies.getItem("__csrf");
+    if( loginCertificate ) {
+      //获取每日推荐歌单
+      recommendPlaylist().then( (res)=>{
+        if(res.status === 200) {
+          this.props.recommendPlaylistFunc(res.data);
+        }else {
+          console.log( "请求错误..." )
+        }
+      } ).catch( err=>{
+        console.log( err )
+      } )
+    }
+    //获取每日推荐歌曲
+    recommendSongs().then( (res)=>{
+      if( res.status === 200 ) {
+        this.props.recommendSongsFunc( res.data )
+      }else {
+        console.log("请求错误...");
+      }
+    } ).catch( err=>{
+      console.log( err )
+    } )
     
 
   
@@ -57,6 +87,8 @@ import MusicPlay from '../../common/MusicPlay';
     const hotCommendTags = this.props.hotCommendTags.tags||[];
     const renderHotCommendTags = formatHotCommendTags(hotCommendTags).slice(0,5);
     // console.log(newAlbum)
+    //登录凭证
+    let loginCertificate = docCookies.getItem("__csrf");
     return (
       <div style={{ minWidth:"1150px" }}>
        <MusicPlay />
@@ -67,12 +99,15 @@ import MusicPlay from '../../common/MusicPlay';
                   <Col span={18}  style={{ border:"1px solid #D3D3D3",borderTop:"none",paddingLeft:"30px",paddingTop:"25px",paddingBottom:"50px",paddingRight:"30px" }}>
                       {/* //热门推荐歌单 */}
                       <div className='Hotrecommend'>
-                          <HotRecommend  hotCommend={hotCommend} hotCommendTags = { renderHotCommendTags }/>
+                          <HotRecommend  hotCommend={hotCommend} hotCommendTags = { renderHotCommendTags } />
                       </div>
                     
                       {/* 这个需要再登录之后菜可以获取数据 */}
                       <div className='personalRecommend'>
-                          <PersonalRecommend />
+                        {
+                          loginCertificate?<PersonalRecommend recommendPlaylistData={this.props.recommendPlaylistData} recommendSongsData={ this.props.recommendSongsData }/>:<div></div>
+                        }
+                          
                       </div>
                       {/*新碟上架组件 */}
                       <div className='newDishShelf'>

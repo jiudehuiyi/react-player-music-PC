@@ -65,7 +65,10 @@ import 'antd/dist/antd.css'
   componentDidMount(){
     this.alpha='热门'
     this.search=this.props.location.search;
-    this.id=this.search.match(/\d+/gi).toString();
+    if(!this.search) {
+      this.props.history.push("/discover/artist/signed/");
+    }
+    this.id=this.search&&this.search.match(/\d+/gi).toString();
     switch(this.id) {
        case "1001":
        this.title="华语男歌手"

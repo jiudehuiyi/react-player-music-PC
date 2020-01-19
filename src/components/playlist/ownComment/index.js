@@ -37,7 +37,7 @@ import 'antd/dist/antd.css'
                     </Col>
                     <Col span={17}></Col>
                     <Col span={1}>140</Col>
-                    <Col span={2}><Button type='primary'>评论</Button></Col>
+                    <Col span={2} style={{ paddingRight:"0px",paddingLeft:"0px" }}><Button type='primary'>评论</Button></Col>
                   </Row>
         </div>
       </div>

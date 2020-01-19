@@ -1,0 +1,36 @@
+
+.ant-carousel .slick-dots li button{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: #DDDDDD;
+}
+.ant-carousel .slick-dots li.slick-active button{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: #BD2D0B;
+}
+.categoryOrigin .categoryDescription{
+    color: #888;
+}
+.djradio-newDj-header,.djradio-Leaderboard-list {
+    font-size: 24px;
+    font-weight: normal;
+    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+    border-bottom: 2px solid #C20C0C;
+    padding-bottom: 10px;
+    color: #333333;
+}
+#djRadioFooter .footer {
+    padding-top: 10px;
+    border: 0px;
+}

@@ -117,7 +117,7 @@ import MusicPlay from '../../common/MusicPlay';
                   >
                 <div style={{ cursor:"pointer",position:"relative",paddingTop:"1px" }}>
                     {
-                      item.coverImgUrl?<img style={{ width:"80%",height:"80%",border:"1px solid #E8E8E8" }} src={item.coverImgUrl} alt=""/>:<div style={{ width:"80%",height:"80%" }}></div>
+                      item.coverImgUrl?<img style={{ width:"120px",height:"120px",border:"1px solid #E8E8E8",boxSizing:"border-box" }} src={item.coverImgUrl} alt=""/>:<div style={{ width:"80%",height:"80%" }}></div>
                     }
                     <div className='clearfix' style={{ width:"80%",height:"27px",lineHeight:"27px",backgroundColor:"#000",opacity:"0.5",position:"absolute",bottom:"0px",color:"#fff" }}>
                        <span style={{ marginLeft:"10px",marginRight:"5px" }}>
@@ -125,12 +125,12 @@ import MusicPlay from '../../common/MusicPlay';
                        </span>
                        <span>{formatPlayCount(item.playCount)}</span>
                        <span style={{ float:"right",marginRight:"10px" }}>
-                          <Icon type="right-circle" />
+                            <Icon type="play-circle" />
                         </span>
                     </div>
                     </div>
                     <div style={{ width:"80%",height:"10%",overflow:"hidden",fontSize:"14px",textOverflow:"ellipsis",whiteSpace:"nowrap",color:"#000000",cursor:"pointer" }}>{item.name}</div>
-                    <div style={{ fontSize:"12px",  cursor:"pointer" }} >by {item.creator.nickname}</div>
+                    <div style={{ fontSize:"12px",  cursor:"pointer",width:"80%",height:"10%",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap" }} >by {item.creator.nickname}</div>
                 </Col>
                 {
                   (index+1)%5===0?null:<Col span={1}></Col>

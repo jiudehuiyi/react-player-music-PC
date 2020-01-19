@@ -91,3 +91,29 @@ export const hotCommendTagsReducer = (state={},action)=>{
                 return state
     }
 }
+
+export const recommendPlaylistReducer = (state={},action)=>{
+    switch(action.type){
+        case "GET_RECOMMEND_PLAYLIST":
+            return {
+                ...state,
+                data:action.data
+            }
+            break;
+            default :
+                return state
+    }
+}
+
+export const recommendSongsReducer = (state={},action)=>{
+    switch(action.type){
+        case "GET_RECOMMEND_SONGS":
+            return {
+                ...state,
+                data:action.data
+            }
+            break;
+            default :
+                return state
+    }
+}

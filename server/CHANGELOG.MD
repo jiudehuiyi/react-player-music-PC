@@ -1,4 +1,145 @@
 # 更新日志
+### 3.25.3 | 2019.11.08
+- 升级依赖,去除多余依赖
+
+- 优化 `test.html`
+
+### 3.25.2 | 2019.11.07
+- 修复邮箱登录状态码错误,增加相关提示 [#633](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/633)
+
+### 3.25.0 | 2019.11.06
+- 新增 `云村热评` 接口[#626](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/626)
+
+- 新增 `歌手热门50首歌曲` 接口 
+
+- 新增`电台24小时节目榜`,`电台24小时主播榜`, `电台最热主播榜`,`电台主播新人榜`,`电台付费精品榜` 接口 [#606](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/606)
+
+- 调整 `歌手分类列表 ` 接口参数 [#624](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/624)
+
+### 3.24.2 | 2019.10.28
+- 修改默认绑定 HOST [#620](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/620)
+
+### 3.24.1 | 2019.10.25
+- 修改默认绑定 HOST [#615](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/615)
+
+### 3.24.0 | 2019.10.22
+- 新增`类别热门电台` 接口 [#607](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/607)
+
+### 3.23.0 | 2019.10.16
+- 修复电台 banner 接口无数据问题[#601](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/601)
+
+- 更新排行榜 [#602](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/602)
+
+- 新增`电台排行榜`,`新晋电台榜`,`热门电台榜`接口 [#604](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/604)
+
+### 3.22.4 | 2019.09.26
+- 修复私信历史记录分页参数问题,更新文档 [#599](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/599)
+
+### 3.22.3 | 2019.09.24
+- 手机号码检测： 添加国家码作为参数，方便检测国外手机号码 [#598](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/598)
+
+### 3.22.2 | 2019.09.18
+- 排行榜参数更新,更新文档[#592](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/592)
+
+### 3.22.1 | 2019.09.12
+- 支持回复评论[#589](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/589)
+
+
+### 3.22.0 | 2019.08.25
+- 支持 CORS 预检 [#564](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/564) [#578](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/578)
+
+### 3.21.1 | 2019.08.21
+- 修复推荐歌单和网易出品mv参数错误,更新文档 [#571](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/571) [#572](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/572) 
+
+### 3.21.0 | 2019.08.20
+- 新增`歌单删除接口`[#570](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/570)
+
+### 3.20.0 | 2019.08.06
+- 新增`更新歌单描述`,`更新歌单名`,`更新歌单标签`,`默认搜索关键词` 接口,更新文档[#547](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/547)
+
+### 3.19.0 | 2019.07.24
+- 新增`检测手机号码是否已注册`和`初始化昵称`接口[#540](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/540)
+
+### 3.18.6 | 2019.07.15
+- 修复注册异常的问题 [#532](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/532)
+
+### 3.18.5 | 2019.07.14
+- 修复部分歌曲无法获得播放链接的问题 [#531](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/531)
+
+### 3.18.3 | 2019.07.04
+- 修复全部 mv`/mv/all` 接口分页参数错误的问题 [#524](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/524)
+
+### 3.18.2 | 2019.07.03
+- 修复听歌打卡接口 `/scrobble` 失效问题
+
+### 3.18.1 | 2019.06.30
+- 评论接口增加 `before` 参数以获取超过5000条评论数据 [#521](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/521)
+
+- 修复 `/msg/comments` 传入参数和文档描述不一致问题
+
+
+### 3.18.0 | 2019.06.29
+- 新增 `更换绑定手机接口`
+
+#### Breaking change
+1. 调整注册接口由 `/captch/register` 修改为 `/register/cellphone`
+
+2. 调整发送短信接口由 `/captch/sent` 修改为 `/captcha/sent`
+
+3. 调整短信验证接口由 `/captch/verify` 修改为 `/captcha/verify`
+
+### 3.17.0 | 2019.06.29
+- 新增 `专辑动态信息` `热搜列表(详细)` 接口,更新文档
+
+### 3.16.0 | 2019.06.27
+- 新增 `收藏/取消收藏专辑` 接口
+
+- 调整歌曲评论接口使用客户端版本接口
+
+### 3.15.0 | 2019.06.16
+- 新增`获取视频标签列表`,`网易出品`,`全部mv`接口, `最新 mv` 和 `mv 排行` 接口加入地区参数,更新文档
+
+### 3.14.0 | 2019.06.10
+- 获取用户粉丝列表接口修改请求参数，更新文档
+
+### 3.13.1 | 2019.06.09
+- 修复获取用户粉丝列表接口只能获取1000个的问题
+
+### 3.13.0 | 2019.05.19
+- 新增eapi算法 (via:[#491](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/491))
+
+- 新增batch批量请求接口  (via:[#491](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/491))
+
+- 用户动态增加分页参数
+
+### 3.12.0 | 2019.05.10
+- 增加`私信内容、我的数字专辑`接口
+
+### 3.11.0 | 2019.05.09
+- 增加`通知-私信、通知-评论、通知-@我、通知-通知、设置、云盘数据详情`接口
+
+### 3.10.2 | 2019.05.09
+- 增加`分享歌曲、歌单、mv、电台、电台节目到动态`接口
+
+### 3.10.1 | 2019.05.08
+- 增加转发动态接口
+
+- 增加删除动态接口
+
+### 3.9.0 | 2019.05.03
+- 新增 云盘歌曲删除, 热门话题, 电台 - 推荐类型, 电台 - 非热门类型, 电台 - 今日优选, 心动模式/智能播放等接口
+
+- 更新文档:banner接口 增加 `type` 参数; 获取动态消息接口增加 `pagesize` 和 `lasttime` 参数; 电台 - 付费精选接口修改默认`limit`为 30
+
+### 3.8.1 | 2019.04.24
+- 修复歌词接口出错问题
+
+### 3.8.0 | 2019.04.14
+- 增加注册,发送验证码,校验验证码接口 via:[https://github.com/Binaryify/NeteaseCloudMusicApi/pull/460](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/460) @[KongValley](https://github.com/KongValley)
+
+### 3.7.1 | 2019.04.09
+- 修复登录460问题
+
 ### 3.7.0 | 2019.03.20
 - 修复喜欢音乐接口参数判断问题
 

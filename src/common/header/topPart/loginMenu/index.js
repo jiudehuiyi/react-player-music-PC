@@ -3,8 +3,8 @@ import {Icon,Menu,Dropdown, Avatar} from 'antd'
 import 'antd/dist/antd.css'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
-import { loginOut,loginStatusRefresh } from '../../../../api';
-
+import { loginOut,loginStatusRefresh,baseURL } from '../../../../api';
+import docCookies from "../../../../api/docCookies"
  class LoginMenu extends Component {
 
     // componentDidMount(){
@@ -45,6 +45,12 @@ import { loginOut,loginStatusRefresh } from '../../../../api';
         this.props.handleLogin(boo)
       }
     } );
+    //清除相应的cookie _csrf
+    docCookies.removeItem("_csrf");
+    //清除对应的登录信息
+    localStorage.removeItem("loginObj")
+    //返回到主页
+    this.props.history.push("/");
   }
   render() {
     const menu = (

@@ -64,3 +64,20 @@ export const hotCommendTagsAction = (data)=>{
     }
 }
 
+export const recommendPlaylistAction = (data)=>{
+    return (dispatch,getState)=>{
+        dispatch({
+            type:"GET_RECOMMEND_PLAYLIST",
+            data
+        })
+    }
+}
+export const recommendSongsAction = (data)=>{
+    return (dispatch,getState)=>{
+        dispatch({
+            type:"GET_RECOMMEND_SONGS",
+            data
+        })
+    }
+}
+
