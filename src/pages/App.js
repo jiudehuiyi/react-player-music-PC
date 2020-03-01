@@ -142,6 +142,19 @@ const dynamic404=Loadable({
     return <Spin />
 }
 })
+const dynamicDataSeenLogin=Loadable({
+    loader:()=>import('../containers/dataSeen/dataSeenLogin'),
+    loading(){
+     return <Spin />
+ }
+ })
+
+const dynamicTouristDataSeenLogin=Loadable({
+    loader:()=>import('../containers/dataSeen/touristDataSeen'),
+    loading(){
+     return <Spin />
+ }
+ })
 
 class App extends Component {
 
@@ -173,7 +186,8 @@ class App extends Component {
                     <Route path='/artist' component={dynamicArtist} />
                     <Route path='/my' component={dynamicMy} />
                     <Route path='/friend' component={dynamicFriends} />
-                    
+                    <Route path="/dataSeenLogin" component={dynamicDataSeenLogin} />
+                    <Route path="/touristDataSeen" component={ dynamicTouristDataSeenLogin}/>
 
                     <Route path="/empty" component={null}  />
                     {/* <Route  path='/' exact component={dynamicMusicPlay} /> */}

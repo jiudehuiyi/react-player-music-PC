@@ -64,6 +64,17 @@ import docCookies from '../../api/docCookies';
         } ).catch( (error)=>{
             console.log("错误为:",error);
         } )
+
+         //更新榜单(内容)数据
+         toplistData(this.search).then( (res)=>{
+            try{
+                if(res.data.code === 200 ){
+                    this.props.toplistContentDataFunc(res.data)
+                }
+            }catch(err){
+                console.log("错误为："+err)
+            }
+        } )
         
     }
     startPlaySong=(searchStr)=>{

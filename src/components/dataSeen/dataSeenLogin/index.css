@@ -1,0 +1,21 @@
+.dataSeenLogin {
+   
+    background:url("../../../assets/images/bg.jpg") no-repeat;
+    position: relative;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-size: 100% 100%;
+    height: 100vh;
+}
+.dataSeenLogin-loginForm {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}

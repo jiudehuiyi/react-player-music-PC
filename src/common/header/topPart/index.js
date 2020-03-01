@@ -105,8 +105,8 @@ class TopPart extends Component {
                             </Col>
                             <Col span={4} style={{ position:"relative" }}>
                                 {/* 暂时没时间写这个,所以直接跳转到下载端 */}
-                                  {/* <NavLink activeClassName='active' to='/download'>下载客户端</NavLink> */}
-                                  <a href="https://music.163.com/#/download" target="_blank" >下载客户端</a>
+                                  <NavLink activeClassName='active' to='/dataSeenLogin'>数据可视化</NavLink>
+                                  {/* <a href="https://music.163.com/#/download" target="_blank" >下载客户端</a> */}
                                   <Tag style={{ position:"absolute",top:"15px" }} color="#DD0D0D">Hot</Tag>
                             </Col>
                         </Row>

@@ -5,7 +5,7 @@ import axios from 'axios';
 export const baseURL = "http://localhost:3000";
 
 //这是线上开发的URL
-// const baseURL = "http://xxx.xx.xx.xx:3000"
+// export const baseURL = "http://119.23.17.221:3000"
 //获取轮播图API
 export const getIndexBanner = ()=>{
     const url = `${baseURL}/banner`;
