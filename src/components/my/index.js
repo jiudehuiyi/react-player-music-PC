@@ -6,7 +6,7 @@ import docCookies from '../../api/docCookies';
 import MusicPlay from '../../common/MusicPlay';
 import { message } from 'antd'
 import 'antd/dist/antd.css'
-import { getSongUrlData,getSongData } from '../../api';
+import { getSongUrlData,getSongData,baseURL } from '../../api';
 class My extends Component {
 
     constructor(props){
@@ -27,6 +27,8 @@ class My extends Component {
                     //储存一个歌曲播放列表,这里尝试用storage,不过这里也可以用reducer进行储存,这里采用storage试试效果
                     let arr = [];
                    let storage =  JSON.parse(localStorage.getItem("songUrlData"));
+                   localStorage.setItem("token",JSON.stringify(res.data.token))
+                   docCookies.setItem("__csrf",res.data.token);
                    if(!storage) {
                       arr.push(res.data)
                       localStorage.setItem('songUrlData',JSON.stringify( arr))
@@ -51,6 +53,8 @@ class My extends Component {
                     //储存一个歌手和歌曲信息这里尝试用storage,不过这里也可以用reducer进行储存,这里采用storage试试效果
                     let arr = [];
                     let storage =  JSON.parse(localStorage.getItem("songInfoData"));
+                    localStorage.setItem("token",JSON.stringify(res.data.token))
+                    docCookies.setItem("__csrf",res.data.token);
                     if(!storage) {
                        arr.push(res.data)
                        localStorage.setItem('songInfoData',JSON.stringify( arr))
@@ -71,15 +75,15 @@ class My extends Component {
 
     changePane=(index)=>{
         //"http://localhost:3000/login/status"这个在地址在上线的时候换成上线的地址,例如:"http://localhost:3000/login/status"换成http:域名/login/status,或者直接的common/Api目录中写,下面的也一样
-        axios.get("http://localhost:3000/login/status").then( (res)=>{
+        axios.get(`${baseURL}/login/status`).then( (res)=>{
             // console.log(res.data)
             this.props.getLoginStatusFunc(res.data);
             if(res.data.code===200) {
-                axios.get(`http://localhost:3000/user/playlist?uid=${res.data.profile.userId}`).then( (res)=>{
+                axios.get(`${baseURL}/user/playlist?uid=${res.data.profile.userId}`).then( (res)=>{
                     // console.log(res.data)
                     this.props.getLoginPlaylistInfoFunc(res.data)
                     if(res.data.code===200) {
-                        axios.get(`http://localhost:3000/playlist/detail?id=${res.data.playlist[index].id}`).then( (res)=>{
+                        axios.get(`${baseURL}/playlist/detail?id=${res.data.playlist[index].id}`).then( (res)=>{
                             this.props.getLoginPlaylistContentFunc(res.data)
                         } )
                     }
@@ -115,20 +119,20 @@ componentDidMount(){
     //       }
     // } )
     // axios.get("http://localhost:3000/login/refresh")
-     this.csrf = docCookies.getItem("__csrf");
+     this.csrf = localStorage.getItem("token")  || docCookies.getItem("__csrf");;
     //  console.log(this.csrf)
-     axios.get("http://localhost:3000/login/refresh")
+     axios.get(`${baseURL}/login/refresh`)
 
     if(this.csrf) {
-        axios.get("http://localhost:3000/login/status").then( (res)=>{
+        axios.get(`${baseURL}/login/status`).then( (res)=>{
             // console.log(res.data)
             this.props.getLoginStatusFunc(res.data);
             if(res.data.code===200) {
-                axios.get(`http://localhost:3000/user/playlist?uid=${res.data.profile.userId}`).then( (res)=>{
+                axios.get(`${baseURL}/user/playlist?uid=${res.data.profile.userId}`).then( (res)=>{
                     // console.log(res.data)
                     this.props.getLoginPlaylistInfoFunc(res.data)
                     if(res.data.code===200) {
-                        axios.get(`http://localhost:3000/playlist/detail?id=${res.data.playlist[0].id}`).then( (res)=>{
+                        axios.get(`${baseURL}/playlist/detail?id=${res.data.playlist[0].id}`).then( (res)=>{
                             this.props.getLoginPlaylistContentFunc(res.data)
                         } )
                     }
@@ -144,7 +148,7 @@ componentDidMount(){
     render() {
         // console.log(this.props.getLoginPlaylistContent)
         // console.log(this.props.getLoginPlaylistInfo)
-        let csrf=docCookies.getItem("__csrf");
+        let csrf= localStorage.getItem("token") || docCookies.getItem("__csrf");
         return (
             <div className='my'>
               <MusicPlay />

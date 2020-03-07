@@ -72,6 +72,7 @@ class TopPart extends Component {
         let getItem = docCookies.getItem;
         //获取登录凭证
         let loginCertificate = localStorage.getItem("token")  ||getItem("__csrf");
+        
         console.log( loginCertificate )
         const  Search  = Input.Search;
         return (
