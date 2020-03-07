@@ -8,7 +8,7 @@ import NotLoginMenu from './notLoginMenu'
 import './index.scss'
 import docCookies from '../../../api/docCookies';
 import axios from 'axios'
-import { loginStatusRefresh } from '../../../api';
+import { loginStatusRefresh,baseURL } from '../../../api';
 
 class TopPart extends Component {
 
@@ -32,7 +32,7 @@ class TopPart extends Component {
     componentDidMount(){
             loginStatusRefresh().then( (res)=>{
                 if(res.data.code===200){
-                    axios.get('http://localhost:3000/login/status').then( (res)=>{
+                    axios.get(`${baseURL}/login/status`).then( (res)=>{
                         if(res.data.code)
                         this.props.loginDataFunc(res.data)
                       } ) 
@@ -47,7 +47,7 @@ class TopPart extends Component {
         if(boo) {
             loginStatusRefresh().then( (res)=>{
                 if(res.data.code===200){
-                    axios.get('http://localhost:3000/login/status',{ withCredentials: true }).then( (res)=>{
+                    axios.get(`${baseURL}/login/status`,{ withCredentials: true }).then( (res)=>{
                         if(res.data.code)
                         this.props.loginDataFunc(res.data)
                       } ) 
@@ -71,7 +71,8 @@ class TopPart extends Component {
         
         let getItem = docCookies.getItem;
         //获取登录凭证
-        let loginCertificate = getItem("__csrf");
+        let loginCertificate = localStorage.getItem("token")  ||getItem("__csrf");
+        console.log( loginCertificate )
         const  Search  = Input.Search;
         return (
             <div className='topPart-wrapper' style={{ minWidth:"1200px" }}>

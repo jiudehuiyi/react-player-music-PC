@@ -5,6 +5,7 @@ import 'antd/dist/antd.css'
 import axios from 'axios'
 import { loginStatusRefresh,getMessageCode,checkMessageCode,registerApi } from '../../../../api';
 import {baseURL} from "../../../../api/index";
+import docCookies from "../../../../api/docCookies";
  class NotLoginMenu extends Component {
 
   constructor(props){
@@ -89,10 +90,11 @@ import {baseURL} from "../../../../api/index";
           baseURL:baseURL,
           withCredentials: true
         }).then(  (res)=>{
-        
+          console.log( res )
           //将返回的信息储存在storage中,包含用户唯一ID等信息
           localStorage.setItem("loginObj",JSON.stringify(res.data));
-
+          localStorage.setItem("token",JSON.stringify(res.data.token))
+          docCookies.setItem("__csrf",res.data.token);
         if(res.data.code === 200){
           this.setState({
             visible:false,
@@ -103,8 +105,9 @@ import {baseURL} from "../../../../api/index";
           loginStatusRefresh().then( (res)=>{
             } )
             // axios.get("http://localhost:3000/login/refresh").then()
-            axios.get(`${baseURL}/login/refresh`).then()
-            this.forceUpdate();
+            axios.get(`${baseURL}/login/refresh`,{withCredentials:true}).then()
+            // this.forceUpdate();
+            console.log(  22222)
           this.props.handleLogin(true)
         }else if(res.data.code===502){
           message.info(res.data.message);
@@ -139,7 +142,8 @@ import {baseURL} from "../../../../api/index";
           
              //将返回的信息储存在storage中,包含用户唯一ID等信息
           localStorage.setItem("loginObj",JSON.stringify(res.data));
-          
+          localStorage.setItem("token",JSON.stringify(res.data.token))
+          docCookies.setItem("__csrf",res.data.token);
           if(res.data.code === 200) {
             this.setState({
               mailVisible:false,

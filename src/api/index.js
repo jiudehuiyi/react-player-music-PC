@@ -237,11 +237,13 @@ export const getUserDetailData = (uid)=>{
 //登录状态刷新
 
 export const loginStatusRefresh = ()=>{
-    return axios.get('http://localhost:3000/login/status',{ withCredentials: true })
+    return axios.get(`${baseURL}/login/status`,{ withCredentials: true })
+    // return axios.get('http://localhost:3000/login/status',{ withCredentials: true })
 }
 //退出登录接口
 export const loginOut = ()=>{
-    return axios.get('http://localhost:3000/logout',{ withCredentials: true })
+    return axios.get(`${baseURL}/logout`,{ withCredentials: true })
+    // return axios.get('http://localhost:3000/logout',{ withCredentials: true })
 }
 //获取用户的播放排行榜
 

@@ -47,6 +47,8 @@ import docCookies from "../../../../api/docCookies"
     } );
     //清除相应的cookie _csrf
     docCookies.removeItem("_csrf");
+    localStorage.removeItem("token")
+    docCookies.removeItem("__csrf");
     //清除对应的登录信息
     localStorage.removeItem("loginObj")
     //返回到主页
